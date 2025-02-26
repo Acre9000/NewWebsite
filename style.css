@@ -7,6 +7,7 @@
   
     --heading-font: 'Nunito', sans-serif;
     --body-font: 'Source Sans 3', sans-serif;
+    --basic-shadow: 0px 3px 20px rgba(0, 0, 0, 0.401);
   }
 
 main {
@@ -15,10 +16,7 @@ main {
   }
 
 main * {
-    margin-block-start: 0;
-    margin-block-end: 1rem;
-    /* or we could use the shortcut syntax like this */
-    margin-block: 0 1rem;
+        margin-block: 0 1rem;
   }
 
 h1 {
@@ -42,12 +40,22 @@ h2 {
 
 footer {
     margin-inline: auto;
-    max-width: 65ch;
+    max-width: 120ch;
+    font-size: .5em;
+    text-align: center;
+    margin-block-end: 1rem;
   }
 
 img {
+    margin-inline: auto;
     max-width: 100%;
+    border-radius: 4px;
+    box-shadow: var(--basic-shadow)
   }
+
+/*img:hover {
+  animation: 3s 1 normal image-anim;
+}*/
 
 a {
   color: var(--link-color);
@@ -58,6 +66,17 @@ a:hover {
   text-decoration:underline;
 }
 
+ul, ol {
+  padding-inline-start: 2rem;
+}
+
+li {
+  margin-block: 0 0.5rem;
+}
+li::marker {
+  color: var(--heading-color);
+}
+
 html {
   font-family: var(--body-font);
   font-size: 20px;
@@ -66,4 +85,15 @@ html {
   background-color: var(--background-color);  
   }
 
+  /*@keyframes image-anim 
+  {
+    from {
+      scale: 100%;
+    }
   
+    to {
+      scale: 200%;
+    }
+  }*/
+
+
