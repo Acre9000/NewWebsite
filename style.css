@@ -11,13 +11,13 @@
   }
 
 main {
-    margin-inline: auto;
-    max-width: 65ch;
+/*passed styling to div.maincentered*/
   }
 
-main * {
-        margin-block: 0 1rem;
-  }
+div.maincentered {
+  margin-inline: auto;
+  max-width: 65ch;
+}
 
 h1 {
   border-block-end: 5px solid var(--heading-color);
@@ -38,11 +38,13 @@ h2 {
   color: var(--heading-color);
 }
 
-img {
+/*img {
     margin-inline: auto;
     max-width: 100%;
     box-shadow: var(--basic-shadow)
-  }
+  }*/
+
+
 
 /*img:hover {
   animation: 3s 1 normal image-anim;
@@ -56,6 +58,8 @@ figure img {
   display: block;
   margin-inline: auto;
   border-radius: 4px;
+  cursor: url("andres-acre.com"), auto;
+  cursor: zoom-in;
 }
 
 figcaption {
@@ -85,7 +89,7 @@ li::marker {
 
 html {
   font-family: var(--body-font);
-  font-size: 20px;
+  font-size: 150%;
   line-height: 1.45;
   color: var(--text-color);
   background-color: var(--background-color);  
@@ -106,56 +110,102 @@ footer * {
   color: var(--muted-text-color)
   }
 
-  /*@keyframes image-anim 
-  {
-    from {
-      scale: 100%;
-    }
-  
-    to {
-      scale: 200%;
-    }
-  }*/
-
-
   ------------------------------------
 
-  div.gallery {
-    border: 1px solid #ccc;
-  }
-  
-  div.gallery img {
-    width: 90%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 2px;
-    text-align: center;
-    margin-block-end: 1rem;
+.grid-wrapper > div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
-  }
+.grid-wrapper > div > a {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-wrapper > div > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+    margin-left: 0%;
+}
+
+.grid-wrapper .small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-column: span 1;
+
+}
+
+.grid-wrapper .wide {
+  grid-column: span 2;
+}
+
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+
+.grid-wrapper .big {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.grid-wrapper .cover {
+    grid-column: span 6;
+    grid-row: span 3;
+}
   
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0 3px;
-    float: left;
-    width: 50%;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 100%;
-      margin: 6px 0;
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    
+@media only screen and (max-width: 1000px) {
+    .grid-wrapper .cover {
+      grid-column: span 4;
+      grid-row: span 2;
     }
+    .grid-wrapper {
+      grid-template-columns: repeat(4, auto);
+      grid-auto-rows: 200px;
+    }
+    .grid-wrapper .small {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      grid-column: span 1;
+    }
+    
   }
   
-  @media only screen and (max-width: 500px) {
-    .responsive {
+@media only screen and (max-width: 600px) {
+    .grid-wrapper .cover {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+    .grid-wrapper {
+      grid-template-columns: repeat(2, auto);
+      grid-auto-rows: 200px;
+    }
+    .grid-wrapper .small {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      grid-column: span 1;
     }
   }
   
