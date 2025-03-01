@@ -38,6 +38,11 @@ h2 {
   color: var(--heading-color);
 }
 
+.between_line{
+  border-block-end: 1px solid var(--heading-color);
+  margin-bottom: 6%;
+}
+
 /*img {
     margin-inline: auto;
     max-width: 100%;
@@ -116,13 +121,13 @@ footer * {
     align-items: center;
 }
 
-.grid-wrapper > div > a {
+.grid-wrapper, .grid-focused > div > a {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.grid-wrapper > div > a > img {
+.grid-wrapper, .grid-focused > div > a > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -136,6 +141,29 @@ footer * {
     grid-auto-rows: 300px;
     grid-auto-flow: dense;
     margin-left: 0%;
+}
+
+.grid-focused {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, auto);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+}
+
+.grid-focused > p {
+  font-size: 85%;
+  line-height: 1.3;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  color: var(--muted-text-color);
+}
+
+.grid-focused .basic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .grid-wrapper .small {
