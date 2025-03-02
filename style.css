@@ -1,9 +1,9 @@
 :root {
     --text-color: #fffdeb;
     --muted-text-color: #fffdeb8f;
-    --heading-color: #ffc35d;
-    --link-color: #ff48c8;
-    --background-color: #212529;
+    --heading-color: #ffa845;
+    --link-color: #0084ff;
+    --background-color: #212329;
   
     --heading-font: 'Nunito', sans-serif;
     --body-font: 'Source Sans 3', sans-serif;
@@ -12,6 +12,7 @@
 
 main {
 /*passed styling to div.maincentered*/
+  margin:5%
   }
 
 div.maincentered {
@@ -56,18 +57,23 @@ h2 {
 }*/
 
 figure {
-  margin-inline: 0;
+  margin-inline: 100px;
 }
 
 figure img {
-  display: block;
-  margin-inline: auto;
-  border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 figcaption {
-  margin-block-start: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 85%;
+  line-height: 1.3;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  color: var(--muted-text-color);
 }
 
 a {
@@ -121,13 +127,13 @@ footer * {
     align-items: center;
 }
 
-.grid-wrapper, .grid-focused > div > a {
+.grid-wrapper > div > a, .grid-focused > div > a {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.grid-wrapper, .grid-focused > div > a > img {
+.grid-wrapper > div > a > img, .grid-focused > div > a > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -141,6 +147,7 @@ footer * {
     grid-auto-rows: 300px;
     grid-auto-flow: dense;
     margin-left: 0%;
+    margin-bottom: 1.5rem;
 }
 
 .grid-focused {
@@ -151,7 +158,7 @@ footer * {
   grid-auto-flow: dense;
 }
 
-.grid-focused > p {
+.grid-focused > p, .grid-wrapper > p {
   font-size: 85%;
   line-height: 1.3;
   margin-left: 0%;
@@ -170,7 +177,7 @@ footer * {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  grid-column: span 1;
+  grid-column: span ;
 
 }
 
@@ -191,7 +198,16 @@ footer * {
     grid-column: span 6;
     grid-row: span 3;
 }
-  
+
+.grid-wrapper .side {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.grid-wrapper .half {
+  grid-column: span 2;
+  grid-row: span 1;
+}
 
 img {
     width: 100%;
@@ -199,6 +215,25 @@ img {
     object-fit: cover;
 }
 
+.auto-resizable-iframe {
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.auto-resizable-iframe > div {
+  position: relative;
+  padding-bottom: 60%;
+  height: 0px;
+}
+
+.auto-resizable-iframe iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
     
 @media only screen and (max-width: 1000px) {
     .grid-wrapper .cover {
